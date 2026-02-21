@@ -1,3 +1,4 @@
+import goblinImg from '../img/goblin.png';
 const BOARD_SIZE = 4;
 let currentPosition = -1;
 let score = 0;
@@ -35,14 +36,14 @@ function createBoard() {
           }
         });
         
-        board.appendChild(cell);
+        board.append(cell);
     }
 }
 
 // Создаём гоблина
 function createGoblin() {
     const img = document.createElement('img');
-    img.src = require('../img/goblin.png');
+    img.src = goblinImg;
     img.alt = 'Goblin';
     img.id = 'goblin';
     return img;
@@ -54,10 +55,10 @@ function placeGoblin(position) {
     
     if (!goblin) {
         goblin = createGoblin();
-        cells[position].appendChild(goblin);
+        cells[position].append(goblin);
         currentPosition = position;
     } else {
-        cells[position].appendChild(goblin);
+        cells[position].append(goblin);
         currentPosition = position;
     }
 }
